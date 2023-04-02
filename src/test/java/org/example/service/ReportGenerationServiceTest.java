@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 import org.example.domain.Item;
+import org.example.domain.ReportProfile;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -20,6 +21,28 @@ class ReportGenerationServiceTest {
     void printReport(List<Item> items) {
         assertDoesNotThrow(() -> reportGenerationService.printReport(items));
     }
+
+    @ParameterizedTest
+    @MethodSource("provideListOfItemsAndReportProfile")
+    void printReport(List<Item> items, ReportProfile reportProfile) {
+        assertDoesNotThrow(() -> reportGenerationService.printReport(items, reportProfile));
+    }
+
+    private static Stream<Arguments> provideListOfItemsAndReportProfile() {
+        return Stream.of(
+            Arguments.of(getItemList(), getReportProfile())
+        );
+    }
+
+    private static ReportProfile getReportProfile() {
+        ReportProfile reportProfile = new ReportProfile();
+        reportProfile.setIsShowName(Boolean.FALSE);
+        reportProfile.setIsShowPrice(Boolean.TRUE);
+        reportProfile.setIsShowDescription(Boolean.TRUE);
+        reportProfile.setIsShowSearchTags(Boolean.TRUE);
+        return reportProfile;
+    }
+
 
     private static Stream<Arguments> provideListOfItems() {
         return Stream.of(

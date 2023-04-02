@@ -19,6 +19,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import org.example.domain.Item;
+import org.example.domain.ReportProfile;
 import org.springframework.ui.jasperreports.JasperReportsUtils;
 
 public class ReportGenerationService {
@@ -29,25 +30,36 @@ public class ReportGenerationService {
     private final String OUTPUT_FILE =
         USER_HOME_DIRECTORY + File.separatorChar + LocalTime.now().format(DateTimeFormatter.ofPattern("HHmmss")) + "JasperTableExample.pdf";
     private final String TEMPLATE_PATH = USER_HOME_DIRECTORY + "\\src\\main\\resources\\template.jrxml";
+    private final String TEMPLATE_REPORT_PROFILE_PATH = USER_HOME_DIRECTORY + "\\src\\main\\resources\\template-with-report-profile.jrxml";
 
-    public void printReport(List<Item> listItems) {
-        try {
-            Map<String, Object> parameters = getParameters(listItems);
-            JasperReport jasperReport = getJasperReport();
+    public void printReport(List<Item> listItems) throws JRException, FileNotFoundException {
+        Map<String, Object> parameters = getParameters(listItems);
+        JasperReport jasperReport = getJasperReport(TEMPLATE_PATH);
 
-            /* outputStream to create PDF */
-            OutputStream outputStream = new FileOutputStream(OUTPUT_FILE);
-            /* Write content to PDF file */
-            JasperReportsUtils.renderAsPdf(jasperReport, parameters, new JREmptyDataSource(), outputStream);
+        /* outputStream to create PDF */
+        OutputStream outputStream = new FileOutputStream(OUTPUT_FILE);
+        /* Write content to PDF file */
+        JasperReportsUtils.renderAsPdf(jasperReport, parameters, new JREmptyDataSource(), outputStream);
 
-            System.out.println("File Generated");
-        } catch (JRException | FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
+        System.out.println("File Generated");
     }
 
-    private JasperReport getJasperReport() throws FileNotFoundException, JRException {
-        InputStream reportInputStream = new FileInputStream(TEMPLATE_PATH);
+    public void printReport(List<Item> listItems, ReportProfile reportProfile) throws JRException, FileNotFoundException {
+        Map<String, Object> parameters = getParameters(listItems);
+        parameters.put("reportProfile", reportProfile);
+
+        JasperReport jasperReport = getJasperReport(TEMPLATE_REPORT_PROFILE_PATH);
+
+        /* outputStream to create PDF */
+        OutputStream outputStream = new FileOutputStream(OUTPUT_FILE);
+        /* Write content to PDF file */
+        JasperReportsUtils.renderAsPdf(jasperReport, parameters, new JREmptyDataSource(), outputStream);
+
+        System.out.println("File Generated");
+    }
+
+    private JasperReport getJasperReport(String pathToTemplate) throws FileNotFoundException, JRException {
+        InputStream reportInputStream = new FileInputStream(pathToTemplate);
         JasperDesign jasperDesign = JRXmlLoader.load(reportInputStream);
         return JasperCompileManager.compileReport(jasperDesign);
     }
