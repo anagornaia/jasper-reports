@@ -56,64 +56,90 @@
                             <datasetParameterExpression><![CDATA[$P{ItemDataSource}]]></datasetParameterExpression>
                         </datasetParameter>
                     </datasetRun>
-                    <jr:column width="130" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
+                    <jr:column width="60" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
+                        <printWhenExpression><![CDATA[true == true]]></printWhenExpression>
+
+
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
                         <jr:tableHeader height="30">
                             <staticText>
-                                <reportElement stretchType="ContainerHeight" x="0" y="0" width="130" height="30" uuid="f60d1675-6fb6-4569-93ca-de32b3a8e861">
+                                <reportElement stretchType="ContainerHeight" x="0" y="0" width="60" height="30" uuid="f60d1675-6fb6-4569-93ca-de32b3a8e861">
+                                    <printWhenExpression><![CDATA[true == true]]></printWhenExpression>
                                 </reportElement>
-                                <text><![CDATA[Item Name]]></text>
+                                <text><![CDATA[Character Name]]></text>
                             </staticText>
                         </jr:tableHeader>
                         <jr:detailCell height="30">
                             <textField>
-                                <reportElement stretchType="ContainerHeight" x="0" y="0" width="130" height="30" uuid="f1de366a-b36f-4200-9b1e-7a0009be5373"/>
+                                <reportElement stretchType="ContainerHeight" x="0" y="0" width="60" height="30" uuid="f1de366a-b36f-4200-9b1e-7a0009be5373">
+                                    <printWhenExpression><![CDATA[true == true]]></printWhenExpression>
+                                </reportElement>
                                 <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
                             </textField>
                         </jr:detailCell>
                     </jr:column>
-                    <jr:column width="130" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
+                    <jr:column width="160" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
+                        <printWhenExpression><![CDATA[true == false]]></printWhenExpression>
+
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
                         <jr:tableHeader height="30">
                             <staticText>
-                                <reportElement stretchType="ElementGroupHeight" x="0" y="0" width="130" height="30" uuid="f60d1675-6fb6-4569-93ca-de32b3a8e861"/>
-                                <text><![CDATA[Item description]]></text>
+                                <reportElement stretchType="ElementGroupHeight" x="0" y="0" width="160" height="30" uuid="f60d1675-6fb6-4569-93ca-de32b3a8e861">
+                                </reportElement>
+                                <text><![CDATA[Quote]]></text>
                             </staticText>
                         </jr:tableHeader>
                         <jr:detailCell height="30">
-                            <textField>
-                                <reportElement x="0" y="0" width="130" height="30" uuid="f1de366a-b36f-4200-9b1e-7a0009be5373"/>
+                            <textField textAdjust="CutText">
+                                <reportElement x="0" y="0" width="160" height="30" uuid="f1de366a-b36f-4200-9b1e-7a0009be5373">
+                                    <printWhenExpression><![CDATA[true == false]]></printWhenExpression>
+                                </reportElement>
                                 <textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
                             </textField>
                         </jr:detailCell>
                     </jr:column>
-                    <jr:column width="130" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
+                    <jr:column width="60" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
                         <jr:tableHeader height="30">
                             <staticText>
-                                <reportElement x="0" y="0" width="130" height="30" uuid="f60d1675-6fb6-4569-93ca-de32b3a8e861"/>
-                                <text><![CDATA[Item searchTags]]></text>
+                                <reportElement x="0" y="0" width="60" height="30" uuid="f60d1675-6fb6-4569-93ca-de32b3a8e861"/>
+                                <text><![CDATA[Location]]></text>
                             </staticText>
                         </jr:tableHeader>
                         <jr:detailCell height="30">
                             <textField>
-                                <reportElement x="0" y="0" width="130" height="30" uuid="f1de366a-b36f-4200-9b1e-7a0009be5373"/>
+                                <reportElement x="0" y="0" width="60" height="30" uuid="f1de366a-b36f-4200-9b1e-7a0009be5373"/>
                                 <textFieldExpression><![CDATA[$F{searchTags}]]></textFieldExpression>
                             </textField>
                         </jr:detailCell>
                     </jr:column>
-                    <jr:column width="140" uuid="980fffb5-1088-47a6-b00f-b5d08b7093c9">
+                    <jr:column width="60" uuid="980fffb5-1088-47a6-b00f-b5d08b7093c9">
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
                         <jr:tableHeader height="30">
                             <staticText>
-                                <reportElement x="0" y="0" width="140" height="30" uuid="16679b95-2e6e-4ca1-b8b6-dd7b74267c56"/>
-                                <text><![CDATA[Item Price]]></text>
+                                <reportElement x="0" y="0" width="60" height="30" uuid="16679b95-2e6e-4ca1-b8b6-dd7b74267c56"/>
+                                <text><![CDATA[Oreons]]></text>
                             </staticText>
                         </jr:tableHeader>
                         <jr:detailCell height="30">
                             <textField>
-                                <reportElement x="0" y="0" width="140" height="30" uuid="341e7faf-9680-4941-a9a4-ac78b8f4aae0"/>
+                                <reportElement x="0" y="0" width="60" height="30" uuid="341e7faf-9680-4941-a9a4-ac78b8f4aae0"/>
                                 <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="60" uuid="980fffb5-1088-47a6-b00f-b5d08b7093c9">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+                        <jr:tableHeader height="30">
+                            <staticText>
+                                <reportElement x="0" y="0" width="60" height="30" uuid="16679b95-2e6e-4ca1-b8b6-dd7b74267c56"/>
+                                <text><![CDATA[Local date]]></text>
+                            </staticText>
+                        </jr:tableHeader>
+                        <jr:detailCell height="30">
+                            <textField textAdjust="ScaleFont">
+                                <reportElement x="0" y="0" width="60" height="30" uuid="a3d34b38-65ce-4890-a003-4a1924ca63af"/>
+                                <textFieldExpression><![CDATA[java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"))]]></textFieldExpression>
                             </textField>
                         </jr:detailCell>
                     </jr:column>

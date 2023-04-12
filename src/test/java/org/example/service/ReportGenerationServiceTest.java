@@ -3,6 +3,7 @@ package org.example.service;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import com.github.javafaker.Faker;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -57,40 +58,51 @@ class ReportGenerationServiceTest {
 
         /* Create Items */
         Item school1 = new Item();
-        school1.setName(faker.lorem().characters(5, 20));
-        school1.setDescription(faker.lorem().characters(10, 70));
-        school1.setSearchTags(faker.lorem().characters(10, 40));
+        school1.setName(faker.witcher().character());
+        school1.setDescription(faker.witcher().quote());
+        school1.setSearchTags(faker.witcher().location());
         school1.setPrice(15000.00);
+        school1.setLocalDate(LocalDate.now());
 
         Item school2 = new Item();
-        school2.setName(faker.lorem().characters(5, 20));
-        school2.setDescription(faker.lorem().characters(10, 1000));
-        school2.setSearchTags(faker.lorem().characters(10, 40));
+        school2.setName(faker.witcher().character());
+        school2.setDescription(faker.witcher().quote());
+        school2.setSearchTags(faker.witcher().location());
         school2.setPrice(25000.00);
+        school2.setLocalDate(LocalDate.now().plusDays(1));
+
 
         Item school3 = new Item();
-        school3.setName(faker.lorem().characters(5, 20));
-        school3.setDescription(faker.lorem().characters(10, 60));
-        school3.setSearchTags(faker.lorem().characters(10, 40));
+        school3.setName(faker.witcher().character());
+        school3.setDescription(faker.witcher().quote());
+        school3.setSearchTags(faker.witcher().location());
         school3.setPrice(35000.00);
+        school3.setLocalDate(LocalDate.now().plusDays(2));
+
 
         Item school4 = new Item();
-        school4.setName(faker.lorem().characters(5, 20));
-        school4.setDescription(faker.lorem().characters(10, 50));
-        school4.setSearchTags(faker.lorem().characters(10, 40));
+        school4.setName(faker.witcher().character());
+        school4.setDescription(faker.witcher().quote());
+        school4.setSearchTags(faker.witcher().location());
         school4.setPrice(45000.00);
+        school4.setLocalDate(LocalDate.now().plusDays(3));
+
 
         Item school5 = new Item();
-        school5.setName(faker.lorem().characters(5, 20));
-        school5.setDescription(faker.lorem().characters(10, 50));
-        school5.setSearchTags(faker.lorem().characters(10, 40));
+        school5.setName(faker.witcher().character());
+        school5.setDescription(faker.witcher().quote());
+        school5.setSearchTags(faker.witcher().location());
         school5.setPrice(55000.00);
+        school5.setLocalDate(LocalDate.now().plusDays(4));
+
 
         Item school6 = new Item();
-        school6.setName(faker.lorem().characters(5, 20));
-        school6.setDescription(faker.lorem().characters(10, 50));
-        school6.setSearchTags(faker.lorem().characters(10, 40));
+        school6.setName(faker.witcher().character());
+        school6.setDescription(faker.witcher().quote());
+        school6.setSearchTags(faker.witcher().location());
         school6.setPrice(65000.00);
+        school6.setLocalDate(LocalDate.now().plusDays(5));
+
 
 
         /* Add Items to List */
