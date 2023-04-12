@@ -57,9 +57,6 @@
                         </datasetParameter>
                     </datasetRun>
                     <jr:column width="60" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
-                        <printWhenExpression><![CDATA[true == true]]></printWhenExpression>
-
-
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
                         <jr:tableHeader height="30">
                             <staticText>
@@ -79,8 +76,6 @@
                         </jr:detailCell>
                     </jr:column>
                     <jr:column width="160" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
-                        <printWhenExpression><![CDATA[true == false]]></printWhenExpression>
-
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
                         <jr:tableHeader height="30">
                             <staticText>
