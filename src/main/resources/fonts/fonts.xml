@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="Courier Condensed">
+        <normal><![CDATA[fonts/courier-condensed/Courier_Condensed_Regular.ttf]]></normal>
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+        <exportFonts/>
+    </fontFamily>
+    <fontFamily name="Roboto Regular">
+        <normal><![CDATA[fonts/courier-condensed/Roboto_Regular.ttf]]></normal>
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+        <exportFonts/>
+    </fontFamily>
+</fontFamilies>

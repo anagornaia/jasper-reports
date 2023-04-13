@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio -->
+<jasperTemplate xmlns="http://jasperreports.sourceforge.net/jasperreports/template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/template http://jasperreports.sourceforge.net/xsd/jaspertemplate.xsd">
+	<style name="default" isDefault="true" fontName="Roboto Regular" fontSize="8">
+		<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+	</style>
+	<style name="Title" style="default" isBold="true"/>
+	<style name="SubTitle" style="default" forecolor="#736343"/>
+	<style name="Table header" style="default" forecolor="#000000" isBold="true"/>
+	<style name="Detail" style="default"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table bottom" style="default" forecolor="#000000" isBold="false"/>
+
+	<style name="Money" style="default" hTextAlign="Right"/>
+</jasperTemplate>

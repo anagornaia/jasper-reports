@@ -36,8 +36,8 @@ public class ReportGenerationService {
     /* Output file location */
     private final String OUTPUT_FILE =
         USER_HOME_DIRECTORY + File.separatorChar + LocalTime.now().format(DateTimeFormatter.ofPattern("HHmmss")) + "JasperTableExample.pdf";
-    private final String TEMPLATE_PATH = USER_HOME_DIRECTORY + "\\src\\main\\resources\\template.jrxml";
-    private final String TEMPLATE_REPORT_PROFILE_PATH = USER_HOME_DIRECTORY + "\\src\\main\\resources\\template-with-report-profile.jrxml";
+    private final String TEMPLATE_PATH = USER_HOME_DIRECTORY + "\\src\\main\\resources\\templates\\template.jrxml";
+    private final String TEMPLATE_REPORT_PROFILE_PATH = USER_HOME_DIRECTORY + "\\src\\main\\resources\\templates\\template-with-report-profile.jrxml";
 
     public void printReport(List<Item> listItems) throws JRException, FileNotFoundException {
         Map<String, Object> parameters = getParameters(listItems);
