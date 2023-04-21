@@ -46,9 +46,9 @@ public class ReportGenerationService {
         /* outputStream to create PDF */
         OutputStream outputStream = new FileOutputStream(OUTPUT_FILE);
         /* Write content to PDF file */
-//        JasperReportsUtils.renderAsPdf(jasperReport, parameters, new JREmptyDataSource(), outputStream);
+        JasperReportsUtils.renderAsPdf(jasperReport, parameters, new JREmptyDataSource(), outputStream);
 
-        homeBrewRenderPdf(TEMPLATE_PATH, parameters, outputStream);
+//        homeBrewRenderPdf(TEMPLATE_PATH, parameters, outputStream);
         System.out.println("File Generated");
     }
 
