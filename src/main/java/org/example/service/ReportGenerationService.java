@@ -27,7 +27,6 @@ import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
 import org.example.domain.Item;
 import org.example.domain.ReportProfile;
-import org.springframework.ui.jasperreports.JasperReportsUtils;
 
 public class ReportGenerationService {
 
@@ -46,8 +45,6 @@ public class ReportGenerationService {
         /* outputStream to create PDF */
         OutputStream outputStream = new FileOutputStream(OUTPUT_FILE);
         /* Write content to PDF file */
-//        JasperReportsUtils.renderAsPdf(jasperReport, parameters, new JREmptyDataSource(), outputStream);
-
         homeBrewRenderPdf(TEMPLATE_PATH, parameters, outputStream);
         System.out.println("File Generated");
     }
@@ -61,7 +58,7 @@ public class ReportGenerationService {
         /* outputStream to create PDF */
         OutputStream outputStream = new FileOutputStream(OUTPUT_FILE);
         /* Write content to PDF file */
-        JasperReportsUtils.renderAsPdf(jasperReport, parameters, new JREmptyDataSource(), outputStream);
+        homeBrewRenderPdf(TEMPLATE_REPORT_PROFILE_PATH, parameters, outputStream);
 
         System.out.println("File Generated");
     }
